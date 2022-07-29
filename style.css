@@ -1,0 +1,170 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    font-size: 13px;
+    background-color: #ecf2f8;
+}
+
+main {
+    width: 80vw;
+    max-width: 1250px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas: 
+        "card1 card1 card2 card5"
+        "card3 card4 card4 card5";
+    gap: 30px;
+}
+
+article {
+    background-color: white;
+    border-radius: 8px;
+    padding: 32px;
+    box-shadow: 14px 18px 10px 2px #ccd1da49;
+}
+
+article > div {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 10px;
+}
+
+div img {
+    box-sizing: border-box;
+    border: 2px solid #8f56eb;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+}
+
+h1 {
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+h2 {
+    font-size: 16px;
+}
+
+.card1 {
+    position: relative;
+    grid-area: card1;
+    color: #cfcfcf;
+    background-color: #7541c8;
+}
+
+.card1 h1 {
+    position: relative;
+}
+
+blockquote {
+    color: #cfcfcf8c;
+    font-weight: 600;
+}
+
+p {
+    color: #cfcfcf70;
+}
+
+.card3 blockquote,
+.card5 blockquote {
+    color: #48556a80;
+    font-weight: 600;
+}
+
+.card3 p,
+.card5 p {
+    color: #48556a70;
+}
+
+.card2 {
+    grid-area: card2;
+    color:#cfcfcf;
+    background-color: #48556a;
+}
+
+.card3 {
+    grid-area: card3;
+    color: #48556a;
+    background-color: #ffffff;
+}
+
+.card4 {
+    grid-area: card4;
+    color: #cfcfcf;
+    background-color: #19212e;
+}
+
+.card5 {
+    grid-area: card5;
+    color: #48556a;
+    background-color: #ffffff;
+}
+
+.quote-icon {
+    position: absolute;
+    opacity: .9;
+    top: 0;
+    right: 85px;
+}
+
+.attribution {
+    position: relative;
+    bottom: 0;
+    padding: 15px;
+    font-size: 11px; text-align: center;
+}
+
+.attribution a { 
+    color: #4b1c97; 
+}
+
+@media(max-width: 1250px){
+    body {
+        justify-content: initial;
+    }
+    main {
+        max-width: 70vw;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas: 
+            "card1 card1"
+            "card2 card5"
+            "card3 card5"
+            "card4 card4";
+        gap: 0 25px;
+    }
+    article{
+        margin-top: 25px;
+    }
+    .quote-icon {
+        right: 40px;
+    }
+}
+
+@media (max-width: 750px){
+    body {
+        justify-content: initial;
+    }
+    main {
+        display: initial;
+        max-width: 80vw;
+
+    }
+    article {
+        margin: 30px 0;
+        box-shadow: none;
+    }
+    .quote-icon {
+        right: 30px;
+    }
+}
